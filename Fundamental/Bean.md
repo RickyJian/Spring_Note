@@ -9,6 +9,15 @@
 | @Repository | 資料訪問(DAO)層使用 |
 | @Controller | 表現(MVC)層使用 |
 
+```java
+
+@Service
+public class AService(){
+
+}
+
+```
+
 ## 注入
 
 | 名稱 | 說明 |
@@ -17,4 +26,16 @@
 | @Inject | JSR-330 提供注入 |
 | @Resource | JSR-250 提供注入 |
 
+```java
 
+@Service
+public class UseAService(){
+
+@Autowired
+aService aService
+
+
+}
+
+
+```

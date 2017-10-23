@@ -1,5 +1,7 @@
 # Bean In Spring
 
+每一個被 Spring 管理的 Java 都稱之為 Bean，而 Spring 提供一個 IoC 容器用來初始化，並解決對象間的依賴與管理。
+
 ## 基本
 
 | 名稱 | 說明 |

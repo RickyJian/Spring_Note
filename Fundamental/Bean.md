@@ -86,3 +86,13 @@ public class JavaConfig{
 }
 
 ```
+
+## AOP
+
+| 名稱 | 說明 |
+|------|------|
+| @Aspect | 宣告切面 |
+| @After | 定義 advice 可直接將攔截規則設為參數 |
+| @Before | 定義 advice 可直接將攔截規則設為參數 |
+| @Around | 定義 advice 可直接將攔截規則設為參數 |
+| @PointCut | 定義攔截規則 |

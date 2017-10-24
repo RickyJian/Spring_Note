@@ -43,3 +43,26 @@
 | Spring-ORM | 物件/關聯對應 |
 | Spring-OXM | 物件/xml對應 |
 | Spring-JMS | JMS |
+
+## 服務
+
+| 名稱 | 描述 | 
+| -----|-----|
+| Spring Boot | 快速配置與開發 |
+| Spring XD | Big Data 應用開發 |
+| Spring Cloud |  |
+| Spring Data | 關聯式 和 NoSQL DB 支持 |
+| Spring Integration |  |
+| Spring batch | 批次作業使用 |
+| Spring Security | 認證授權應用 |
+| Spring HATEOAS | 簡化 REST 服務開發 |
+| Spring Social | 社交網路 API 集成 |
+| Spring AMQP |  |
+| Spring Mobile |  |
+| Spring for Android | 提供 Android 上 RESTful API 功能 |
+| Spring Web Flow |  |
+| Spring Web Services | SOAP/Web 服務 |
+| Spring LDAP | LDAP |
+| Spring Session |  |
+
+

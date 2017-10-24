@@ -1,6 +1,17 @@
-# Spring Framework 四大基本原則
+# Spring Fundamental 
 
-* POJO 
-* IOC
-* AOP
-* Template
+Spring 基礎扎根
+
+## AOP
+
+## Bean
+
+## DI
+
+## EL
+
+## IOC
+
+## POJO
+
+## Others

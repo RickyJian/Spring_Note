@@ -2,7 +2,31 @@
 
 每一個被 Spring 管理的 Java 都稱之為 Bean，而 Spring 提供一個 IoC 容器用來初始化，並解決對象間的依賴與管理。
 
-## 基本
+## Bean Scope
+
+Spring Container 創建 Bean 的過程
+
+| 名稱 | 描述 | 備註 |
+| ----- | ----- | ----- |
+| Singleton | Spring Container 只有一個 Bean 實例 | 默認配置 |
+| Prototype | 每次此用則創建一個 Bean |  |
+| Request | 每一 http request 則創建一個 Bean |  |
+| Session | 每一 http session 則創建一個 Bean |  |
+| GlobalSession | 只在 portal 應用中有用，每一 global http session 則創建一個 Bean |  |
+
+```java
+
+@Service
+@Scope("prototype")
+public class UseAService(){
+
+}
+
+```
+
+## 各種 Bean 的應用
+
+### 基本
 
 | 名稱 | 說明 |
 |------|------|
@@ -20,7 +44,7 @@ public class AService(){
 
 ```
 
-## 注入
+### 注入
 
 | 名稱 | 說明 |
 |------|------|
@@ -42,7 +66,7 @@ aService aService
 
 ```
 
-## 部署
+### 部署
 
 
 | 名稱 | 說明 |
@@ -87,7 +111,7 @@ public class JavaConfig{
 
 ```
 
-## AOP
+### AOP
 
 | 名稱 | 說明 |
 |------|------|

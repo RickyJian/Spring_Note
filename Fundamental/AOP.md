@@ -4,6 +4,8 @@
 <br>
 常用在 交易管理(Transactional)、事件處理(Log)
 
+## Annotation
+
 | 名稱 | 說明 |
 |------|------|
 | @Aspect | 宣告切面 |

@@ -34,3 +34,12 @@
 | Spring-WebSocket | 提供 WebSocket 功能 |
 | Spring-Webmvc-Portlet | 提供 Portlet 環境 |
 
+### 資料庫訪問 (Data Access/Integration)
+
+| 名稱 | 描述 | 
+| -----|-----|
+| Spring-JDBC | 提供 JDBC 訪問資料庫 |
+| Spring-TX | 交易管理 |
+| Spring-ORM | 物件/關聯對應 |
+| Spring-OXM | 物件/xml對應 |
+| Spring-JMS | JMS |

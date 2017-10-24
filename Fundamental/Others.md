@@ -34,6 +34,12 @@
 | Spring-WebSocket | 提供 WebSocket 功能 |
 | Spring-Webmvc-Portlet | 提供 Portlet 環境 |
 
+### EL
+
+| 名稱 | 描述 | 
+| -----|-----|
+| commons-io | Spring EL |
+
 ### 資料庫訪問 (Data Access/Integration)
 
 | 名稱 | 描述 | 

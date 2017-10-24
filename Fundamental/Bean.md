@@ -6,7 +6,7 @@
 
 | 名稱 | 說明 |
 |------|------|
-| @Component | 沒又明確定義 |
+| @Component | 沒有明確定義 |
 | @Service | 業務邏輯(Service)層使用 |
 | @Repository | 資料訪問(DAO)層使用 |
 | @Controller | 表現(MVC)層使用 |

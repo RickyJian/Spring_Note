@@ -34,6 +34,12 @@
 | Spring-WebSocket | 提供 WebSocket 功能 |
 | Spring-Webmvc-Portlet | 提供 Portlet 環境 |
 
+### JSON
+
+| 名稱 | 描述 | 
+| -----|-----|
+| jackson-dataformat-xml | 獲得對象和 json 或 xml 之間做轉換 |
+
 ### EL
 
 | 名稱 | 描述 | 

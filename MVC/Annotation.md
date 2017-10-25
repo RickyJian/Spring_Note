@@ -71,3 +71,30 @@ public class DemoRESTController{
 | 名稱 | 說明 |
 |------|------|
 | @EnableWebMVC | 自動開啟默認配置 |
+
+```java
+
+@Configuration
+@EnableWebMvc
+@ComponentScan("com.xx.xx.xxxx.xx")
+public class WebConfig extends WebMvcConfigurerAdapter {
+
+    @Bean 
+    public InternalResourceViewResolver viewResolver(){
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/classes/views/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry){
+        registry.addResourceHandler("/assets/**").addResourceLocatios("classpath:/assets");
+        // addResourceHandler   對外的路徑
+        // addResourceLocatios  真實檔案放置位置
+    }
+}
+
+```
+
+> 繼承 WebMvcConfigurerAdapter 類別，重寫其方法則可對 MVC 進行配置

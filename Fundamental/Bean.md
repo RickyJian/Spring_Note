@@ -24,6 +24,82 @@ public class UseAService(){
 
 ```
 
+## Bean 生命週期
+
+加入一些動作在 Bean 使用前或是 Bean 使用後
+
+### 基本 `@Bean`
+
+```java
+
+// Bean Life Class
+
+public class BeanLife(){
+    public BeanLife(){
+        System.out.println("Bean Construct")
+    }
+    public void init(){
+        System.out.println("Bean Init")
+    }
+    public void destroy(){
+        System.out.println("Bean Destroy")
+    }
+}
+
+// Java Config
+
+@Configuration
+@ComponentScan("com.xx.xxx.xxx")
+public class BeanConfig(){
+    
+    @Bean(initMethod="init",destroyMethod="destroy")
+    BeanLife beanLife(){
+        return new BeanLife();
+    }
+}
+
+```
+
+### JSR-250
+
+```java
+
+// Bean Life Class
+
+public class JSR250BeanLife(){
+    public JSR250BeanLife(){
+        System.out.println("JSR250Bean Construct")
+    }
+    @PostConstruct
+    public void init(){
+        System.out.println("JSR250Bean Init")
+    }
+    @PreDestroy
+    public void destroy(){
+        System.out.println("JSR250Bean Destroy")
+    }
+}
+
+// Java Config
+
+@Configuration
+@ComponentScan("com.xx.xxx.xxx")
+public class BeanConfig(){
+    
+    @Bean
+    JSR250BeanLife jsr250BeanLife(){
+        return new JSR250BeanLife();
+    }
+}
+
+```
+
+#### jar
+
+| 名稱 | 描述 | 
+| -----|-----|
+| JSR-250 | Bean 初始或銷毀操作 |
+
 ## 各種 Bean 的應用
 
 ### 基本

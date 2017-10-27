@@ -98,3 +98,57 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 ```
 
 > 繼承 WebMvcConfigurerAdapter 類別，重寫其方法則可對 MVC 進行配置
+
+## @ControllerAdvice 
+
+對 Controller 的配置，對所有的 @RequestMapping 方法都有效
+
+| 名稱 | 說明 |
+|------|------|
+| @ExceptionHandler | 全域處理 Controller 的異常。它組合了`@Conponent`註解，因此自動註冊成 Spring 的 Bean |
+| @InitBinder | 用來設置 WebDataBinder |
+| @ModelAttribute | 綁定鍵值對應到 Model 裡 |
+
+> WebDataBinder：
+
+```java
+
+// 制定 Advice
+
+@ControllerAdvice
+public class ExceptionHandlerAdvice {
+
+    @ExceptionHandler(value = Exception.class) // 全域錯誤處理，透過 value 可以過濾錯誤條件
+    public ModelAndView exception (Exception exception ,WebRequest request){
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("errorMessage",exception.getMessage());
+        return modelAndView;
+    }
+
+    @ModelAttribute // 將鍵值添加到全域 @RequestMapping 的方法中
+    public void addAttributes(Model model){
+        model.addAttribute("msg","其他訊息");
+    }
+
+    @InitBinder 
+    public void initBinder(WebDataBinder webDataBinder){
+        web.setDisallowedFields("id");
+    }
+}
+
+```
+
+```java
+
+// Controller
+
+@Controller 
+public class AdviceController{
+    @RequestMapping("/advice")
+    public String getSomething (@ModelAttribue("msg") String msg , DemoObj demoObj){
+        throw new Exception ("錯誤："+msg);
+    }
+}
+
+
+```

@@ -4,7 +4,7 @@
 
 ## Spring Fundametal 
 
-介紹 Spring 基礎理論與基礎
+介紹 Spring 理論與基礎
 
 ## Spring MVC
 

@@ -4,12 +4,16 @@
 
 ## Bean 宣告
 
+
 | 名稱 | 說明 |
 |------|------|
 | @Component | 沒有明確定義 |
 | @Service | 業務邏輯(Service)層使用 |
 | @Repository | 資料訪問(DAO)層使用 |
 | @Controller | 表現(MVC)層使用 |
+| @Bean | 配置類別中做宣告使用 |
+
+方法一：直接宣告在 class 
 
 ```java
 
@@ -19,6 +23,66 @@ public class AService(){
 }
 
 ```
+
+方法二：在配置類別中宣告
+
+```java
+
+@Configuration
+public class Config{
+
+    @Bean
+    public AService aService (){
+        return new AService();
+    }
+
+}
+
+```
+
+## Bean 注入
+
+只要 class 被宣告成 Bean，就可以被另一個 Bean 注入
+
+| 名稱 | 說明 |
+|------|------|
+| @Autowired | Spring 提供注入 |
+| @Inject | JSR-330 提供注入 |
+| @Resource | JSR-250 提供注入 |
+
+方法一：Autowired 注入
+
+```java
+
+@Service
+public class UseAService{
+
+@Autowired
+aService aService
+
+
+}
+
+
+```
+
+方法二：set注入
+
+```java
+
+public class UseAService {
+
+    private AService aService;
+
+    public void setAService(AService aService) {
+        this.aService = aService;
+    }
+
+}
+
+
+```
+
 
 ## Bean Scope
 

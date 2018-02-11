@@ -9,9 +9,11 @@ spring.http.encoding.force=true
 
 ```
 
+參數配置
+
 ```java
 
-
+@Component
 @ConfigurationProperties(prefix = "spring.http.encoding")
 public class HttpEncodingProperties{
 
@@ -39,5 +41,29 @@ public class HttpEncodingProperties{
     }
 }
 
+```
+
+設定檔配置
+
+```java
+
+@SpringBootApplication
+public class PracticeApplication {
+
+	@Autowired
+	private HttpEncodingProperties httpEncodingProperties;
+
+	public static void main(String[] args) {
+		SpringApplication.run(PracticeApplication.class, args);
+	}
+
+	@Bean
+	public CharacterEncodingFilter characterEncodingFilter(){
+		CharacterEncodingFilter filter = new OrderedCharacterEncodingFilter();
+		filter.setEncoding(String.valueOf(httpEncodingProperties.getCharset()));
+		filter.setForceEncoding(httpEncodingProperties.isForce());
+		return filter;
+	}
+}
 
 ```

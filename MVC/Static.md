@@ -14,7 +14,7 @@
 public class MvcConfig implements WebMvcConfigurer {
 
     @Override
-    public void addResouceHandlers(ResourceHandlerRegistry registry)){
+    public void addResouceHandlers(ResourceHandlerRegistry registry){
         // addResourceHandler：對外訪問路徑
         // addResourceLocation：檔案或目錄位置
         registry.addResourceHandler("/assets/**").addResourceLocation("classpath:/assets/");
@@ -26,11 +26,11 @@ public class MvcConfig implements WebMvcConfigurer {
 
 ### @Configuration
 
-連結：[Configuration](/Fundamental/Config.md)
+[連結](/Fundamental/Config.md)
 
 ### @EnableWebMvc
 
-連結：[EnableWebMvc](Config.md)
+[連結](Config.md)
 
 
 

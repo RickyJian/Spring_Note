@@ -25,23 +25,30 @@ public class WebInitializer implements WebApplicationInitlizer{
 
 ## 註解：@EnabledWebMvc
 
-自動開啟默認配置
+自動開啟默認配置，當要自我撰寫設定檔時必須註解
+
+### ViewResolvver
+
+[連結](ViewResolver.md)
+
+### 靜態檔案配置
+
+[連結](Static.md)
+
+### configurePathMatch
+
+在 Spring MVC 中倘若路徑最後帶`.`，`.`後的值將會被忽略，若不想忽略後方值必須實作`configurePathMatch`
+
 
 ```java
 
-
 @Configuration
 @EnableWebMvc
-public class MvcConfig {
+public class MvcConfig implements WebMvcConfigurer {
 
-    @Bean
-    public InternalResourceViewSolver viewResolver(){
-        InternalResourceViewSolver viewResolver = new InternalResourceViewSolver();
-        // 設定 view 頁面放置位置
-        viewResolver.setPrefix("/WEB-INF/views");
-        // 設定後綴字
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
+    @Override
+    public void configurePathMatch(PathMatchConfigurer configurer){
+        configurer.setUseSuffixPatternMatch(false);
     }
 
 }

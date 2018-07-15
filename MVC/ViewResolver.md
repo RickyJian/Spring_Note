@@ -14,3 +14,24 @@
 
 * 主要設置 前綴 及 後綴
 * 常用的 viewResolver
+
+```java
+
+
+@Configuration
+@EnableWebMvc
+public class MvcConfig {
+
+    @Bean
+    public InternalResourceViewSolver viewResolver(){
+        InternalResourceViewSolver viewResolver = new InternalResourceViewSolver();
+        // 設定 view 頁面放置位置
+        viewResolver.setPrefix("/WEB-INF/views");
+        // 設定後綴字
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
+
+}
+
+```

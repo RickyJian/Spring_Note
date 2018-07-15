@@ -1,15 +1,15 @@
 # HttpMessageConverter
 
 * 用來處理 request 和 respnse 裡的資料
+* Spring 內有大量 HttpMessageConverter
 
+預設
 | 類型 | 說明 |
 | ----- | ----- |
-| StringHttpMessageConverter | |
-| FormHttpMessageConverter | |
-| MarshallingHttpMessageConverter | |
-| MappingJacksonHttpMessageConverter | |
-| AtomFeedHttpMessageConverter | |
-| RssChannelHttpMessageConverter | |
+| StringHttpMessageConverter | 支持所有 media type ，write Content-Type 為 `text/plain` |
+| FormHttpMessageConverter | read/write `application/x-www-form-urlencoded` 並將資料寫入MultiValueMap<String,String> |
+| MarshallingHttpMessageConverter | 支持 `text/xml` and `application/xml` 並寫出 |
+| MappingJackson2HttpMessageConverter | 支持 `application/json` 、 `application/*+json` 編碼為 UTF-8，使用 Jackson 2 的 ObjectMapper read/write JSON 資料 |
 
 ## 自訂
 

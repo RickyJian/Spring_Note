@@ -10,7 +10,7 @@
 | @Component | 沒有明確定義 |
 | @Service | 業務邏輯(Service)層使用 |
 | @Repository | 資料訪問(DAO)層使用 |
-| @Controller | 表現(MVC)層使用 |
+| [@Controller](/MVC/Controller.md) | 表現(MVC)層使用 |
 | @Bean | 配置類別中做宣告使用 |
 
 方法一：直接宣告在 class 

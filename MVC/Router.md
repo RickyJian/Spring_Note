@@ -70,7 +70,7 @@ public class DemoRESTController{
 
 ## @ControllerAdvice 
 
-對 Controller 的配置，對所有的 @RequestMapping 方法都有效
+對 @Controller 的類別以下所有的 @RequestMapping 方法都有效
 
 | 名稱 | 說明 |
 |------|------|

@@ -80,7 +80,7 @@ public class DemoRESTController{
 
 ```java
 
-// 制定 Advice
+// 自訂 Advice
 
 @ControllerAdvice
 public class ExceptionHandlerAdvice {

@@ -155,3 +155,7 @@ public class FirstApplication {
 ### Tomcat 配置
 
 [連結](/MVC/Tomcat.md)
+
+### Favicon
+
+[連結](/MVC/Favicon.md)

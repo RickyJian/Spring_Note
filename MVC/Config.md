@@ -27,7 +27,7 @@ public class WebInitializer implements WebApplicationInitlizer{
 
 自動開啟默認配置，當要自我撰寫設定檔時必須註解
 
-### ViewResolvver
+### ViewResolver
 
 [連結](ViewResolver.md)
 

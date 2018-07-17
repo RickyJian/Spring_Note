@@ -28,7 +28,7 @@ public class MvcConfig implements WebMvcConfigurer {
 	
 	/**
 	 * 
-	 * 模板設定
+	 * 模板引擎配置
 	 * 
 	 */
 	@Bean

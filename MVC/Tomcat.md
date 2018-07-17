@@ -15,7 +15,7 @@ server.port = 8080
 server.session-timeout = 1280
 
 ## 訪問配置，默認為 /
-server.context-path = /project
+server.servlet.contextPath = /project
 
 ## Tomcat
 

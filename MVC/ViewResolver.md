@@ -23,8 +23,8 @@
 public class MvcConfig {
 
     @Bean
-    public InternalResourceViewSolver viewResolver(){
-        InternalResourceViewSolver viewResolver = new InternalResourceViewSolver();
+    public InternalResourceViewResolver viewResolver(){
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         // 設定 view 頁面放置位置
         viewResolver.setPrefix("/WEB-INF/views");
         // 設定後綴字

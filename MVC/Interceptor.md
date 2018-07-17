@@ -1,11 +1,12 @@
 # Interceptor 攔截器
 
 對每一 request 前後進行邏輯處理，類似 servlet 的 filter。
-<br>
-必須繼承 `HandlerInterceptorAdapter` 類別，並覆寫其方法。
-1. preHandler
-2. postHandler
 
+必須繼承 `HandlerInterceptorAdapter` 類別，並覆寫其方法。
+
+## 方法：PreHandler
+
+request 進 controller 前做邏輯處理
 
 ```java
 
@@ -20,6 +21,20 @@ public class DemoInterceptor extends HandlerInterceptorAdapter {
         return true;
     }
 
+}
+
+```
+
+## 方法：postHandler
+
+request 進 controller 後做邏輯處理
+
+```java
+
+// 定義 Interceptor
+
+public class DemoInterceptor extends HandlerInterceptorAdapter {
+
     @Override
     public void postHandler(HttpServletRequest request , HttpServletResponse response , Object handler , ModelAndView modelAndView) throws Exception {
         // 業務邏輯部分
@@ -29,13 +44,14 @@ public class DemoInterceptor extends HandlerInterceptorAdapter {
 
 ```
 
-```java
+## 方法：AddInterceptors
 
-// 配置
+配置 攔截器
+
+```java
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.xx.xx.xxxx.xx")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean 

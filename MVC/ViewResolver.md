@@ -35,3 +35,7 @@ public class MvcConfig {
 }
 
 ```
+
+## Template
+
+[連結](Template.md)

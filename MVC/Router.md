@@ -130,12 +130,13 @@ public class AdviceController{
 
 @Configuration
 @EnableWebMvc
-public class WebConfig extends WebMvcConfigurerAdapter {
+public class WebConfig implements WebMvcConfigurer {
 
-   @Override 
-   public void addViewControllers(ViewControllerRegistry registry){
-       registry.addViewController("/index").setViewName("/index");
-   } 
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/").setViewName("index");
+		WebMvcConfigurer.super.addViewControllers(registry);
+	}
 
 } 
 

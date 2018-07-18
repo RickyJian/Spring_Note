@@ -25,7 +25,9 @@ public class WebInitializer implements WebApplicationInitlizer{
 
 ## 註解：@EnabledWebMvc
 
-自動開啟默認配置，當要自我撰寫設定檔時必須註解
+自動開啟默認配置，當要自我撰寫設定檔時必須註解，並實作 WebMvcConfigurer。
+
+但在 Spring boot 中無須註解@EnabledWebMvc 只需實作 WebMvcConfigurer。
 
 ### ViewResolver
 

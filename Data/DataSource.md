@@ -1,6 +1,5 @@
 # DataSource
 
-Java’s javax.sql.DataSource interface provides a standard method of working with database connections.
 java 提供 ` javax.sql.DataSource ` 介面提供基本資料庫連線。
 
 ## DriverManagerDataSource

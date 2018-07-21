@@ -50,10 +50,35 @@ apache java database connection pool
         dataSource.setMaxIdle( 10 );
         // 最大等待秒數
         dataSource.setMaxWait( 10000 );
-        return ds;
+        return dataSource;
     }
 
 ```
 
-
 ### C3P0
+
+C3P0 是個開源 database connection pool
+
+參照：[連結](http://josh-persistence.iteye.com/blog/2229929)
+
+```java
+
+    @Bean
+    public DataSource dataSource(){
+        ComboPooledDataSource dataSource = new ComboPooledDataSource(); 
+        dataSource.setDriverClass(driver);  
+        dataSource.setJdbcUrl(url);  
+        dataSource.setUser(username);  
+        dataSource.setPassword(password); 
+        // connection pool 初始創建的 connection 數量
+        dataSource.setInitialPoolSize(1);
+        // connection 最大連線數量，默認為 15
+        dataSource.setMaxPoolSize(15);
+        // connection pool 保持最小的連接數量
+        dataSource.setMinPoolSize(5);
+        // 連線生存時間，超過時間未使用將會被 close ，若還在使用則等使用完畢後 close
+        dataSource.setMaxConnectionAge(Integer.parseInt("100"));
+        return dataSource;
+    }
+
+```

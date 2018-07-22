@@ -18,6 +18,10 @@ PlatformTransactionManager 介面有許多具體的交易實現類別，例如�
 
 ```java
 
+@Configuration
+@EnableTransactionManagement
+public class PersistenceConfig {
+
     @Bean
     public PlatformTransactionManager transactionManager(){
         // Hibernate 交易管理
@@ -26,6 +30,8 @@ PlatformTransactionManager 介面有許多具體的交易實現類別，例如�
         htm.setSessionFactory(sessionFactory());
         return htm;
     }
+
+}
 
 ```
 

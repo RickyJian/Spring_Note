@@ -28,7 +28,7 @@ Spring 與 Hibernate 常用配置，建立時會自動載入 mappingResource 中
         // SessionFactory Hibernate 配置設定
         lsfb.setHibernateProperties(properties);
         lsfb.afterPropertiesSet();
-        return lsfb;
+        return lsfb.getObject();
     }
 
 ```

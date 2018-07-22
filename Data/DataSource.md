@@ -76,8 +76,14 @@ C3P0 是個開源 database connection pool
         // connection pool 保持最小的連接數量
         dataSource.setMinPoolSize(5);
         // 連線生存時間，超過時間未使用將會被 close ，若還在使用則等使用完畢後 close
-        dataSource.setMaxConnectionAge(Integer.parseInt("100"));
+        dataSource.setMaxConnectionAge(100));
+        // 當 connection pool 空時，自動增加連線數量
+    	dataSource.setAcquireIncrement(3);
+        // 檢查 connection pool 的 connection 是否使用，已秒為單位
+    	dataSource.setIdleConnectionTestPeriod(120);
         return dataSource;
     }
 
 ```
+
+[配置](https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0/4.1.0.Final)

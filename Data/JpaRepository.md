@@ -30,6 +30,8 @@ public class JpaConfig {
 
 ```
 
+EntityManagerFactory：[連結](EntityManagerFactory.md)
+
 ## @NamedQuery
 
 @NamedQuery 撰寫

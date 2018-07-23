@@ -87,4 +87,8 @@ public interface DemoService {
 | ISOLATION_READ_COMMITTED | 允許其他 transaction 讀取已 commit 的資料欄位，防止 dirty read 產生，但 non-repeatable reads 和 phantom reads 有可能發生 |
 | ISOLATION_READ_UNCOMMITTED | 允許其他 transaction 讀取未 commit 的資料欄位，dirty read 、 non-repeatable reads 、 phantom reads 有可能發生 |
 | ISOLATION_REPEATABLE_READ | 執行相同查詢時回應相同資料，防止 dirty read 和 non-repeatable reads 產生，但 phantom reads 有可能發生  |
-| ISOLATION_SERIALIZABLE | 防止 dirty read 、 non-repeatable reads 、 phantom reads 產生，由於會將資料表鎖住，因此有效能問題 | 
+| ISOLATION_SERIALIZABLE | 防止 dirty read 、 non-repeatable reads 、 phantom reads 產生，由於會將資料表鎖住，因此有效能問題 |
+
+------
+
+AOP交易設定：[連結]("TransactionIntercepter.md")

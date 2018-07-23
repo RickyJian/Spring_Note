@@ -58,6 +58,9 @@ apache java database connection pool
 
 C3P0 是個開源 database connection pool
 
+> Gradel 配置：<br>
+> compile('org.hibernate:hibernate-c3p0:4.1.0.Final')
+
 參照：[連結](http://josh-persistence.iteye.com/blog/2229929)
 
 ```java

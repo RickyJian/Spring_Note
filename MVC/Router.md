@@ -12,6 +12,10 @@
 | @RequestBody | 將參數放置在 request 中，而不是待在網址後面，此註解放在參數前，常用來處理 Content-Type 不是 application/x-www-form-urlencoded 的格式 |
 | @PathVariable | 接收入徑參數，此註解放在參數前 |
 | @RestController | 複合註解，組合了 `@Controller` 和 `@ResponseBody` |
+| @GetMapping | 複合註解，組合了 `@RequestMapping(method = RequestMethod.GET)` |
+| @PostMapping | 複合註解，組合了 `@RequestMapping(method = RequestMethod.POST)` |
+| @DeleteMapping | 複合註解，組合了 `@RequestMapping(method = RequestMethod.DELETE)` |
+| @PUTMapping | 複合註解，組合了 `@RequestMapping(method = RequestMethod.PUT)` |
 
 ```java
 
@@ -67,6 +71,16 @@ public class DemoRESTController{
 }
 
 ```
+
+### method = RequestMethod.POST
+
+| 屬性 | 說明 |
+| ----- | ----- | 
+| headers | 當 request header 具備此 header 時，才會由此方法處理 |
+| consumes | 當 request 的 Content-Type 具備此方法的  Content-Type 時，才會由此方法處理 |
+| produces | 指定 client 接收的 content-type |
+| path | URL 路徑 |
+
 
 ## @ControllerAdvice 
 

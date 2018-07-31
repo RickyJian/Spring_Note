@@ -52,7 +52,7 @@ public class DemoInterceptor extends HandlerInterceptorAdapter {
 
 @Configuration
 @EnableWebMvc
-public class WebConfig extends WebMvcConfigurerAdapter {
+public class WebConfig extends WebMvcConfigurer {
 
     @Bean 
     public DemoInterceptor demoInterceptor(){
@@ -60,9 +60,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
     @Override
-    public void addInterceptors(InterceptorReistry registry){
-        registry.addInterceptor(demoInterceptor())
-    }
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(demoInterceptor());
+		WebMvcConfigurer.super.addInterceptors(registry);
+	}
 
 } 
 

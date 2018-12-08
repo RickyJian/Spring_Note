@@ -7,11 +7,17 @@
 | @Value | 將配置的值注入屬性中 |
 | @ConfigurationProperties | 將值自動注入POJO中 |
 
+[參照](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
+
 application.properties
 
 ```properties
 
+// server 連線字串綁定，預設為 localhost 
+server.address = localhost
+// server port 號綁定
 server.port=9090
+// project 名稱
 server.servlet.contextPath = /project
 
 ```

@@ -15,7 +15,7 @@ request 進 controller 前做邏輯處理
 public class DemoInterceptor extends HandlerInterceptorAdapter {
 
     @Override
-    public boolean preHandler(HttpServletRequest request , HttpServletResponse response , Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request , HttpServletResponse response , Object handler) throws Exception {
         // 業務邏輯部分
         System.out.println("pre")
         return true;
@@ -36,7 +36,7 @@ request 進 controller 後做邏輯處理
 public class DemoInterceptor extends HandlerInterceptorAdapter {
 
     @Override
-    public void postHandler(HttpServletRequest request , HttpServletResponse response , Object handler , ModelAndView modelAndView) throws Exception {
+    public void postHandle(HttpServletRequest request , HttpServletResponse response , Object handler , ModelAndView modelAndView) throws Exception {
         // 業務邏輯部分
         System.out.println("post")
     }
